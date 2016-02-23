@@ -42,7 +42,7 @@ float HTU21D::readTempC(void){
 	//pc.printf("received: %x : %d", rx[0], rx[1]);
 
 	// Algorithm from datasheet to compute temperature.
-   unsigned int rawTemp = ((unsigned int) rx[0] << 8) | (unsigned int) rx[1];
+	unsigned int rawTemp = ((unsigned int) rx[0] << 8) | (unsigned int) rx[1];
 	 rawTemp &= 0xFFFC; //Zero out the status bits but keep them in place
 	
 	float realTempC = rawTemp / (float)65536;	//2^16 = 65536
@@ -78,7 +78,7 @@ float HTU21D::read_humid(void){
 	//pc.printf("received: %x : %d", rx[0], rx[1]);
 	
 	//Algorithm from datasheet.
-  unsigned int rawHumd = ((unsigned int) rx[0] << 8) | (unsigned int) rx[1];
+  	unsigned int rawHumd = ((unsigned int) rx[0] << 8) | (unsigned int) rx[1];
 	rawHumd &= 0xFFFC; //Zero out the status bits but keep them in place
 	
 	float realHumd = rawHumd / (float)65536;	//2^16 = 65536
