@@ -1,8 +1,5 @@
 /**
  * @author Alan Lai & Nelson Diaz modified by Johnny Garcia
- * The Georgia Institute of Technology 
- * ECE 4180 Embeded Systems
- * Professor Hamblen
  * Last revision 02/10/2016
  * 
  * @section LICENSE
@@ -29,18 +26,18 @@
  #include "mbed.h"
  
  // **Address & Commands.
- #define HTU21D_I2C_ADDRESS 						0X40
+ #define HTU21D_I2C_ADDRESS 	0X40
  #define HTU21D_I2C_ADDRESS_PLUS_WRITE 	((HTU21D_I2C_ADDRESS <<1) | (0X00)) //0x80
- #define HTU21D_I2C_ADDRESS_PLUS_READ		((HTU21D_I2C_ADDRESS <<1) | (0X01)) //0x81
+ #define HTU21D_I2C_ADDRESS_PLUS_READ	((HTU21D_I2C_ADDRESS <<1) | (0X01)) //0x81
  
- #define TRIGGER_TEMP_MEASURE_HOLD_MASTER  			0xE3
- #define TRIGGER_HUMD_MEASURE_HOLD_MASTER  			0xE5
+ #define TRIGGER_TEMP_MEASURE_HOLD_MASTER  	0xE3
+ #define TRIGGER_HUMD_MEASURE_HOLD_MASTER  	0xE5
  #define TRIGGER_TEMP_MEASURE__NO_HOLD_MASTER  	0xF3
  #define TRIGGER_HUMD_MEASURE_NO_HOLD_MASTER  	0xF5
  
  #define WRITE_USER_REG	0XE6
  #define READ_USER_REG 	0XE7
- #define SOFT_RESET			0XFE
+ #define SOFT_RESET	0XFE
  
  //**Parameters
  #define I2C_FREQUENCY 400000 //400kHz, as specified by the datasheet.
@@ -97,7 +94,7 @@
      * @param address Address to read from.
      * @return The contents of the memory address.
      */
-    int read(int EepromOrRam, int address);
+    		int read(int EepromOrRam, int address);
 
  };
  #endif // HTU21D_H
